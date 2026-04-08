@@ -1,0 +1,142 @@
+[
+    {
+        "nombre": "nombre 1",
+        "precio": 8,
+        "stock": 56,
+        "marca": "marca 1",
+        "id": "1"
+    },
+    {
+        "nombre": "nombre 2",
+        "precio": 27,
+        "stock": 51,
+        "marca": "marca 2",
+        "id": "2"
+    },
+    {
+        "nombre": "nombre 3",
+        "precio": 52,
+        "stock": 78,
+        "marca": "marca 3",
+        "id": "3"
+    },
+    {
+        "nombre": "nombre 4",
+        "precio": 16,
+        "stock": 62,
+        "marca": "marca 4",
+        "id": "4"
+    },
+    {
+        "nombre": "nombre 5",
+        "precio": 10,
+        "stock": 60,
+        "marca": "marca 5",
+        "id": "5"
+    },
+    {
+        "nombre": "nombre 6",
+        "precio": 49,
+        "stock": 27,
+        "marca": "marca 6",
+        "id": "6"
+    },
+    {
+        "nombre": "nombre 7",
+        "precio": 63,
+        "stock": 62,
+        "marca": "marca 7",
+        "id": "7"
+    },
+    {
+        "nombre": "nombre 8",
+        "precio": 52,
+        "stock": 43,
+        "marca": "marca 8",
+        "id": "8"
+    },
+    {
+        "nombre": "nombre 9",
+        "precio": 64,
+        "stock": 30,
+        "marca": "marca 9",
+        "id": "9"
+    },
+    {
+        "nombre": "nombre 10",
+        "precio": 95,
+        "stock": 20,
+        "marca": "marca 10",
+        "id": "10"
+    },
+    {
+        "nombre": "nombre 11",
+        "precio": 51,
+        "stock": 70,
+        "marca": "marca 11",
+        "id": "11"
+    },
+    {
+        "nombre": "nombre 12",
+        "precio": 56,
+        "stock": 99,
+        "marca": "marca 12",
+        "id": "12"
+    },
+    {
+        "nombre": "nombre 13",
+        "precio": 56,
+        "stock": 76,
+        "marca": "marca 13",
+        "id": "13"
+    },
+    {
+        "nombre": "nombre 14",
+        "precio": 15,
+        "stock": 88,
+        "marca": "marca 14",
+        "id": "14"
+    },
+    {
+        "nombre": "nombre 15",
+        "precio": 45,
+        "stock": 90,
+        "marca": "marca 15",
+        "id": "15"
+    },
+    {
+        "nombre": "nombre 16",
+        "precio": 77,
+        "stock": 56,
+        "marca": "marca 16",
+        "id": "16"
+    },
+    {
+        "nombre": "nombre 17",
+        "precio": 65,
+        "stock": 24,
+        "marca": "marca 17",
+        "id": "17"
+    },
+    {
+        "nombre": "nombre 18",
+        "precio": 92,
+        "stock": 22,
+        "marca": "marca 18",
+        "id": "18"
+    },
+    {
+        "nombre": "nombre 19",
+        "precio": 31,
+        "stock": 11,
+        "marca": "marca 19",
+        "id": "19"
+    },
+    {
+        "nombre": "nombre 20",
+        "precio": 49,
+        "stock": 29,
+        "marca": "marca 20",
+        "id": "20"
+    }
+]
