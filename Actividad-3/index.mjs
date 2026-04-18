@@ -1,31 +1,63 @@
-import {writeFile,readFile} from  'fs/promises';
-import path, { join } from 'path';
-import http from 'node:http';
+import { writeFile, readFile } from 'fs/promises'
+import path from 'path'
+import http from 'node:http'
 
-const ruta = path.join('./usuarios.json')
+const ruta = path.join(process.cwd(), 'usuarios.json')
 
-const server = http.createServer(async(request,response)=>{
+/* FUNCIOMNES */
+async function obtenerUsuariosAPI() {
+    const response = await fetch('https://api.escuelajs.co/api/v1/users')
+    return await response.json()
+}
+
+async function guardarUsuarios(usuarios) {
+    await writeFile(ruta, JSON.stringify(usuarios, null, 4))
+}
+
+async function leerUsuarios() {
+    const data = await readFile(ruta, 'utf-8')
+    return JSON.parse(data)
+}
+
+function filtrarUsuarios(usuarios) {
+    return usuarios.filter(u => u.id < 10)
+}
+
+/* ======== SERVER ============== */
+
+const server = http.createServer(async (request, response) => {
     try {
-        if(request.method == 'GET' && request.url === '/usuarios'){
-            const apiResponse = await fetch ('https://api.escuelajs.co/api/v1/users')
-            const usuarios = await apiResponse.json()
 
-            await writeFile(ruta,JSON.stringify(usuarios,null,4))
+        // Ruta principal
+        if (request.method === 'GET' && request.url === '/usuarios') {
 
-            const data = await readFile(ruta,'utf-8')
+            const usuarios = await obtenerUsuariosAPI()
+            await guardarUsuarios(usuarios)
+
             response.writeHead(200, { 'Content-Type': 'application/json' })
-            response.end(data)
+            response.end(JSON.stringify(usuarios, null, 4))
+        }
 
-        } else {
-            response.writeHead(404)
+        // Ruta filtrada
+        else if (request.method === 'GET' && request.url === '/usuarios/filtrados') {
+
+            const usuarios = await leerUsuarios()
+            const filtrados = filtrarUsuarios(usuarios)
+
+            response.writeHead(200, { 'Content-Type': 'application/json' })
+            response.end(JSON.stringify(filtrados, null, 4))
+        }
+
+        // 404
+        else {
+            response.writeHead(404, { 'Content-Type': 'text/plain' })
             response.end('Recurso no encontrado')
         }
 
     } catch (error) {
-        throw new error(e)
         console.log(error)
-        response.writeHead(500)
-        response.end('Error')
+        response.writeHead(500, { 'Content-Type': 'text/plain' })
+        response.end('Error interno del servidor')
     }
 })
 
